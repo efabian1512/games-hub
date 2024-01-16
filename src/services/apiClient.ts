@@ -16,10 +16,10 @@ class APIClient<T> {
         this.endpoint = endpoint;
     }
 
-    getAll = (config?: AxiosRequestConfig) => {
-        return axiosIntance.get<FetchResponse<T>>(this.endpoint, config)
+    getAll = (config?: AxiosRequestConfig) =>
+        axiosIntance.get<FetchResponse<T>>(this.endpoint, config)
             .then(res => res.data);
-    }
+
 }
 
 export default APIClient;
