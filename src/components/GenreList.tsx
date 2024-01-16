@@ -26,7 +26,8 @@ const GenreList = ({ onSelectGenre, selectedGenre}: Props) => {
                 </HStack>
                 </ListItem>)}
         </List>
-        </>  
+        </>
+        
     )
 }
 
