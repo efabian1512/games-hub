@@ -1,4 +1,5 @@
-import { FetchResponse, Game } from '../types/types';
+import { FetchResponse } from "../entities/FetchResponse";
+import { Game } from "../entities/Game";
 import { useInfiniteQuery } from '@tanstack/react-query';
 import APIClient from '../services/apiClient';
 import ms from 'ms';
