@@ -5,6 +5,7 @@ import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { Link } from "react-router-dom";
 
 
 
@@ -39,7 +40,7 @@ const GameGrid = () => {
             >
              <SimpleGrid  padding="10px" columns={{sm:1, md:2, lg:3, xl: 4}} spacing={6}>
             {isLoading && skeletons.map(skeleton => <GameCardContainer key={skeleton}><GameCardSkeleton/></GameCardContainer>)}
-            {data?.pages.map((page, index) => <React.Fragment key={index}>{page.results.map(post => <GameCardContainer key={post.id} ><GameCard game={post}/></GameCardContainer> )}</React.Fragment>)}
+            {data?.pages.map((page, index) => <React.Fragment key={index}>{page.results.map(post => <Link to={`/games/${post.slug}`}><GameCardContainer key={post.id} ><GameCard game={post}/></GameCardContainer></Link>)}</React.Fragment>)}
             
         </SimpleGrid>
         </InfiniteScroll>  

@@ -16,9 +16,18 @@ class APIClient<T> {
         this.endpoint = endpoint;
     }
 
-    getAll = (config?: AxiosRequestConfig) =>
-        axiosIntance.get<FetchResponse<T>>(this.endpoint, config)
+    getAll = (config?: AxiosRequestConfig) => {
+        return axiosIntance.get<FetchResponse<T>>(this.endpoint, config)
             .then(res => res.data);
+    }
+
+    getOne = (slug: string | number) => {
+        return axiosIntance.get<T>(this.endpoint + '/' + slug)
+            .then(res => res.data);
+    }
+
+
+
 
 }
 
