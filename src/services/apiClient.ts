@@ -26,9 +26,10 @@ class APIClient<T> {
             .then(res => res.data);
     }
 
-
-
-
+    getContent = (slug: string | number) => {
+        return axiosIntance.get<FetchResponse<T>>(this.endpoint + '/' + slug + '/movies')
+            .then(res => res.data);
+    }
 }
 
 export default APIClient;
