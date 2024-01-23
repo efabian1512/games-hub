@@ -40,7 +40,7 @@ const GameGrid = () => {
             >
              <SimpleGrid  padding="10px" columns={{sm:1, md:2, lg:3, xl: 4}} spacing={6}>
             {isLoading && skeletons.map(skeleton => <GameCardContainer key={skeleton}><GameCardSkeleton/></GameCardContainer>)}
-            {data?.pages.map((page, index) => <React.Fragment key={index}>{page.results.map(post => <Link to={`/games/${post.slug}`}><GameCardContainer key={post.id} ><GameCard game={post}/></GameCardContainer></Link>)}</React.Fragment>)}
+            {data?.pages.map((page, index) => <React.Fragment key={index}>{page.results.map(post => <Link key={post.id} to={`/games/${post.slug}`}><GameCardContainer><GameCard game={post}/></GameCardContainer></Link>)}</React.Fragment>)}
             
         </SimpleGrid>
         </InfiniteScroll>  
