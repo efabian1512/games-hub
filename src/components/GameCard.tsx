@@ -4,7 +4,7 @@ import CriticScore from './CriticScore';
 import PlatformIconList from './PlatformIconList';
 import getCroppedImageUrl from '../services/image.url';
 import Emoji from './Emoji';
-import { Game } from "../entities/Game";
+import Game from "../entities/Game";
 import { Link } from 'react-router-dom';
 
 

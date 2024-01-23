@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { FetchResponse } from "../entities/FetchResponse";
+import FetchResponse from "../entities/FetchResponse";
 
 
 const axiosIntance = axios.create({
